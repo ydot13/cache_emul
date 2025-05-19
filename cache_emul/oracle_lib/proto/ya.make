@@ -1,0 +1,9 @@
+PROTO_LIBRARY()
+
+SRCS(
+    request.proto
+)
+
+EXCLUDE_TAGS(GO_PROTO JAVA_PROTO)
+
+END()

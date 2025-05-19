@@ -1,0 +1,9 @@
+package NExperiment.NProto;
+
+message TRequest {
+    optional uint64 Timestamp = 1;
+    optional uint64 Hash = 2;
+    optional uint64 UidHash = 3;
+    optional string Cluster = 4;
+    optional string Hint = 5;
+}

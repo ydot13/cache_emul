@@ -1,0 +1,31 @@
+package NExperiment.NProto;
+import "cache_emul/oracle_lib/cache_cluster/proto/config.proto";
+import "cache_emul/oracle_lib/generators/prod_generator/proto/params.proto";
+
+message TConfig {
+    optional string Day = 1;
+    optional string YTPool = 2;
+    optional string ExperimentYtDir = 3;
+    optional string RequestsDir = 4;
+    optional string ReportDir = 5;
+    optional string RequestsFormat = 6;
+    optional NOracle.NProto.TConfig SimulationConfig = 7;
+    optional string ReportSuffix = 8;
+}
+
+
+message TGeneratorConfig {
+    message TFileGeneratorConfig {
+        optional string AmmoFilePath = 1;
+        optional string YtTable = 2;
+    }
+    optional TFileGeneratorConfig FileGeneratorConfig = 1;
+    optional NOracle.NProdGenerator.NProto.TParams ProdGeneratorConfig = 2;
+    optional string Comment = 3;
+}
+
+message TDiffConfig {
+    repeated NOracle.NProto.TConfig SimulationConfigs = 1;
+    repeated TGeneratorConfig GeneratorConfigs = 2;
+    optional string ReportDir = 3;
+}
